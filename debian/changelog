@@ -1,9 +1,9 @@
-pytest-mpl (0.7-2) UNRELEASED; urgency=medium
+pytest-mpl (0.7-2) unstable; urgency=medium
 
   * Depend on python-all, not python-all-dev.
   * Fix duplicate long description.
 
- -- Leo Singer <leo.singer@ligo.org>  Tue, 21 Feb 2017 11:54:08 -0500
+ -- Leo Singer <leo.singer@ligo.org>  Tue, 21 Feb 2017 11:57:58 -0500
 
 pytest-mpl (0.7-1) unstable; urgency=medium
 
