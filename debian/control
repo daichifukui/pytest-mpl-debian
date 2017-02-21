@@ -34,6 +34,8 @@ Description: pytest plugin for Matplotlib image comparison in Python
  Matplotlib includes a number of test utilities and decorators, but these are
  geared towards the nose testing framework. Pytest-mpl makes it easy to compare
  figures produced by tests to reference images when using pytest.
+ .
+ This package provides the pytest plugin for Python 2.
 
 Package: python3-pytest-mpl
 Architecture: all
@@ -47,4 +49,5 @@ Description: pytest plugin for Matplotlib image comparison in Python 3
  Matplotlib includes a number of test utilities and decorators, but these are
  geared towards the nose testing framework. Pytest-mpl makes it easy to compare
  figures produced by tests to reference images when using pytest.
-
+ .
+ This package provides the pytest plugin for Python 3.
