@@ -3,6 +3,7 @@ pytest-mpl (0.9-1) UNRELEASED; urgency=medium
   * New upstream version.
   * Update Standards-Version to 4.1.3.
   * Update VCS links to point to salsa.debian.org.
+  * Skip test that works only under tox.
 
  -- Leo Singer <leo.singer@ligo.org>  Thu, 25 Jan 2018 10:44:36 -0500
 
