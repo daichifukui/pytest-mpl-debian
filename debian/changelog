@@ -1,3 +1,9 @@
+pytest-mpl (0.9-1) UNRELEASED; urgency=medium
+
+  * New upstream version.
+
+ -- Leo Singer <leo.singer@ligo.org>  Thu, 25 Jan 2018 10:44:36 -0500
+
 pytest-mpl (0.7-2) unstable; urgency=medium
 
   * Depend on python-all, not python-all-dev.
