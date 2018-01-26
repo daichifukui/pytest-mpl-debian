@@ -3,7 +3,7 @@ Maintainer: Debian Astronomy Maintainers <debian-astro-maintainers@lists.alioth.
 Uploaders: Leo Singer <leo.singer@ligo.org>
 Section: python
 Priority: optional
-Build-Depends: debhelper (>= 9),
+Build-Depends: debhelper (>= 11),
                dh-python,
                python-all (>= 2.6.6-3~),
                python-matplotlib,
