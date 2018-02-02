@@ -1,3 +1,9 @@
+pytest-mpl (0.9-3) UNRELEASED; urgency=medium
+
+  * Add CI tests
+
+ -- Leo Singer <leo.singer@ligo.org>  Fri, 02 Feb 2018 12:44:18 -0500
+
 pytest-mpl (0.9-2) unstable; urgency=medium
 
   * Fix lintian warning: insecure-copyright-format-uri
