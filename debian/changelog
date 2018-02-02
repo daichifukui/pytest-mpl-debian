@@ -1,3 +1,9 @@
+pytest-mpl (0.9-3~bpo8+1) jessie-backports; urgency=medium
+
+  * Rebuild for jessie-backports.
+
+ -- Leo Singer <leo.singer@ligo.org>  Fri, 02 Feb 2018 12:50:28 -0500
+
 pytest-mpl (0.9-3) unstable; urgency=medium
 
   * Add CI tests
