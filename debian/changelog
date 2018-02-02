@@ -1,8 +1,8 @@
-pytest-mpl (0.9-3) UNRELEASED; urgency=medium
+pytest-mpl (0.9-3) unstable; urgency=medium
 
   * Add CI tests
 
- -- Leo Singer <leo.singer@ligo.org>  Fri, 02 Feb 2018 12:44:18 -0500
+ -- Leo Singer <leo.singer@ligo.org>  Fri, 02 Feb 2018 12:45:04 -0500
 
 pytest-mpl (0.9-2) unstable; urgency=medium
 
