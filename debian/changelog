@@ -1,3 +1,9 @@
+pytest-mpl (0.9-3~bpo9+1) stretch-backports; urgency=medium
+
+  * Rebuild for stretch-backports.
+
+ -- Leo Singer <leo.singer@ligo.org>  Fri, 02 Feb 2018 12:52:31 -0500
+
 pytest-mpl (0.9-3) unstable; urgency=medium
 
   * Add CI tests
