@@ -3,7 +3,7 @@
 About
 -----
 
-This is a plugin to faciliate image comparison for
+This is a plugin to facilitate image comparison for
 `Matplotlib <http://www.matplotlib.org>`__ figures in pytest.
 
 Matplotlib includes a number of test utilities and decorators, but these
@@ -11,7 +11,7 @@ are geared towards the `nose <http://nose.readthedocs.org/>`__ testing
 framework. Pytest-mpl makes it easy to compare figures produced by tests
 to reference images when using `pytest <http://pytest.org>`__.
 
-For each figure to test, the reference image is substracted from the
+For each figure to test, the reference image is subtracted from the
 generated image, and the RMS of the residual is compared to a
 user-specified tolerance. If the residual is too large, the test will
 fail (this is implemented using helper functions from
@@ -140,7 +140,9 @@ filename of the plot (which defaults to the name of the test with a
 The baseline directory in the decorator above will be interpreted as
 being relative to the test file. Note that the baseline directory can
 also be a URL (which should start with ``http://`` or ``https://`` and
-end in a slash).
+end in a slash). If you want to specify mirrors, set ``baseline_dir`` to
+a comma-separated list of URLs (real commas in the URL should be encoded
+as ``%2C``).
 
 Finally, you can also set a custom baseline directory globally when
 running tests by running ``py.test`` with:
@@ -219,6 +221,22 @@ actual images, in order to see what changed.
 The default tolerance is 2, which is very strict. In some cases, you may
 want to relax this to account for differences in fonts across different
 systems.
+
+By default, the expected, actual and difference files are written to a
+temporary directory with a non-deterministic path. If you want to instead
+write them to a specific directory, you can use::
+
+    py.test --mpl --mpl-results-path=results
+
+The ``results`` directory will then contain one sub-directory per test, and each
+sub-directory will contain the three files mentioned above. If you are using a
+continuous integration service, you can then use the option to upload artifacts
+to upload these results to somewhere where you can view them. For more
+information, see:
+
+* `Uploading artifacts on Travis-CI <https://docs.travis-ci.com/user/uploading-artifacts/>`_
+* `Build Artifacts (CircleCI) <https://circleci.com/docs/1.0/build-artifacts/>`_
+* `Packaging Artifacts (AppVeyor) <https://www.appveyor.com/docs/packaging-artifacts/>`_
 
 Running the tests for pytest-mpl
 --------------------------------
