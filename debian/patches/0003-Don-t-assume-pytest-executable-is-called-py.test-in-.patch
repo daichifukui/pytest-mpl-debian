@@ -1,0 +1,59 @@
+From: Leo Singer <leo.singer@ligo.org>
+Date: Sat, 3 Feb 2018 10:05:34 -0500
+Subject: Don't assume pytest executable is called py.test in unit tests
+
+Many distributions append suffixes to installed Python script
+names to differentiate between Python 2 and 3 versions. For
+example, Debian installs the Python 3 pytest binary as `py.test-3`
+(see https://packages.debian.org/stretch/all/python3-pytest/filelist).
+
+In the unit tests, invoke the pytest binary using `sys.exectuable`
+to make sure that the subprocesses run with the same version of
+Python as the unit tests themselves.
+---
+ tests/test_pytest_mpl.py | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+diff --git a/tests/test_pytest_mpl.py b/tests/test_pytest_mpl.py
+index bdeea65..d8b3e28 100644
+--- a/tests/test_pytest_mpl.py
++++ b/tests/test_pytest_mpl.py
+@@ -86,11 +86,11 @@ def test_fails(tmpdir):
+         f.write(TEST_FAILING)
+ 
+     # If we use --mpl, it should detect that the figure is wrong
+-    code = subprocess.call('py.test --mpl {0}'.format(test_file), shell=True)
++    code = subprocess.call('{0} -m pytest --mpl {1}'.format(sys.executable, test_file), shell=True)
+     assert code != 0
+ 
+     # If we don't use --mpl option, the test should succeed
+-    code = subprocess.call('py.test {0}'.format(test_file), shell=True)
++    code = subprocess.call('{0} -m pytest {1}'.format(sys.executable, test_file), shell=True)
+     assert code == 0
+ 
+ 
+@@ -114,7 +114,7 @@ def test_output_dir(tmpdir):
+ 
+     # When we run the test, we should get output images where we specify
+     output_dir = tmpdir.join('test_output_dir').strpath
+-    code = subprocess.call('py.test --mpl-results-path={0} --mpl {1}'.format(output_dir, test_file),
++    code = subprocess.call('{0} -m pytest --mpl-results-path={1} --mpl {2}'.format(sys.executable, output_dir, test_file),
+                            shell=True)
+ 
+     assert code != 0
+@@ -151,13 +151,13 @@ def test_generate(tmpdir):
+     gen_dir = tmpdir.mkdir('spam').mkdir('egg').strpath
+ 
+     # If we don't generate, the test will fail
+-    p = subprocess.Popen('py.test --mpl {0}'.format(test_file), shell=True,
++    p = subprocess.Popen('{0} -m pytest --mpl {1}'.format(sys.executable, test_file), shell=True,
+                          stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+     p.wait()
+     assert b'Image file not found for comparison test' in p.stdout.read()
+ 
+     # If we do generate, the test should succeed and a new file will appear
+-    code = subprocess.call('py.test --mpl-generate-path={0} {1}'.format(gen_dir, test_file), shell=True)
++    code = subprocess.call('{0} -m pytest --mpl-generate-path={1} {2}'.format(sys.executable, gen_dir, test_file), shell=True)
+     assert code == 0
+     assert os.path.exists(os.path.join(gen_dir, 'test_gen.png'))
+ 
