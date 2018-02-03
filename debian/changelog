@@ -1,8 +1,8 @@
-pytest-mpl (0.9-4) UNRELEASED; urgency=medium
+pytest-mpl (0.9-4) unstable; urgency=medium
 
   * Use correct pytest executable in Python 3 unit tests.
 
- -- Leo Singer <leo.singer@ligo.org>  Sat, 03 Feb 2018 10:23:44 -0500
+ -- Leo Singer <leo.singer@ligo.org>  Sat, 03 Feb 2018 10:31:52 -0500
 
 pytest-mpl (0.9-3) unstable; urgency=medium
 
