@@ -4,6 +4,7 @@ pytest-mpl (0.10-1) UNRELEASED; urgency=medium
   * Rediff patches.
   * Update Standards-Version to 4.2.1.
   * Update minimum Python 3 version to 3.3.
+  * Add dependency on Pillow.
 
  -- Leo Singer <leo.singer@ligo.org>  Thu, 20 Dec 2018 13:45:10 -0500
 
