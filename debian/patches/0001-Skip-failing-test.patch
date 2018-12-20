@@ -7,10 +7,10 @@ Subject: Skip failing test
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/tests/test_pytest_mpl.py b/tests/test_pytest_mpl.py
-index 27a87f4..c2c4fa8 100644
+index 1fa0379..3aa4f02 100644
 --- a/tests/test_pytest_mpl.py
 +++ b/tests/test_pytest_mpl.py
-@@ -103,7 +103,7 @@ def test_gen():
+@@ -140,7 +140,7 @@ def test_gen():
  # test this on Linux.
  
  

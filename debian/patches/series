@@ -1,3 +1,2 @@
 0001-Skip-failing-test.patch
 0002-Skip-test-that-only-works-under-tox.patch
-0003-Don-t-assume-pytest-executable-is-called-py.test-in-.patch

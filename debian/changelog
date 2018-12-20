@@ -1,6 +1,7 @@
 pytest-mpl (0.10-1) UNRELEASED; urgency=medium
 
   * New upstream release.
+  * Rediff patches.
 
  -- Leo Singer <leo.singer@ligo.org>  Thu, 20 Dec 2018 13:45:10 -0500
 
