@@ -20,7 +20,7 @@ Vcs-Browser: https://salsa.debian.org/debian-astro-team/pytest-mpl
 Vcs-Git: https://salsa.debian.org/debian-astro-team/pytest-mpl.git
 Homepage: https://github.com/astrofrog/pytest-mpl
 X-Python-Version: >= 2.6
-X-Python3-Version: >= 3.2
+X-Python3-Version: >= 3.3
 
 Package: python-pytest-mpl
 Architecture: all
