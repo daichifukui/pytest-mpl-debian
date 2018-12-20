@@ -143,6 +143,29 @@ def switch_backend(backend):
         yield
 
 
+def close_mpl_figure(fig):
+    "Close a given matplotlib Figure. Any other type of figure is ignored"
+
+    import matplotlib.pyplot as plt
+    from matplotlib.figure import Figure
+
+    # We only need to close actual Matplotlib figure objects. If
+    # we are dealing with a figure-like object that provides
+    # savefig but is not a real Matplotlib object, we shouldn't
+    # try closing it here.
+    if isinstance(fig, Figure):
+        plt.close(fig)
+
+
+def get_marker(item, marker_name):
+    if hasattr(item, 'get_closest_marker'):
+        return item.get_closest_marker(marker_name)
+    else:
+        # "item.keywords.get" was deprecated in pytest 3.6
+        # See https://docs.pytest.org/en/latest/mark.html#updating-code
+        return item.keywords.get(marker_name)
+
+
 class ImageComparison(object):
 
     def __init__(self, config, baseline_dir=None, generate_dir=None, results_dir=None):
@@ -155,19 +178,18 @@ class ImageComparison(object):
 
     def pytest_runtest_setup(self, item):
 
-        compare = item.keywords.get('mpl_image_compare')
+        compare = get_marker(item, 'mpl_image_compare')
 
         if compare is None:
             return
 
         import matplotlib
         import matplotlib.pyplot as plt
-        from matplotlib.figure import Figure
         from matplotlib.testing.compare import compare_images
-        from matplotlib.testing.decorators import ImageComparisonTest as MplImageComparisonTest
         try:
             from matplotlib.testing.decorators import remove_ticks_and_titles
         except ImportError:
+            from matplotlib.testing.decorators import ImageComparisonTest as MplImageComparisonTest
             remove_ticks_and_titles = MplImageComparisonTest.remove_text
 
         MPL_LT_15 = LooseVersion(matplotlib.__version__) < LooseVersion('1.5')
@@ -198,7 +220,7 @@ class ImageComparison(object):
                 if not baseline_remote:
                     baseline_dir = os.path.join(os.path.dirname(item.fspath.strpath), baseline_dir)
 
-            with plt.style.context(style), switch_backend(backend):
+            with plt.style.context(style, after_reset=True), switch_backend(backend):
 
                 # Run test and get figure object
                 if inspect.ismethod(original):  # method
@@ -231,13 +253,7 @@ class ImageComparison(object):
                     test_image = os.path.abspath(os.path.join(result_dir, filename))
 
                     fig.savefig(test_image, **savefig_kwargs)
-
-                    # We only need to close actual Matplotlib figure objects. If
-                    # we are dealing with a figure-like object that provides
-                    # savefig but is not a real Matplotlib object, we shouldn't
-                    # try closing it here.
-                    if isinstance(fig, Figure):
-                        plt.close(fig)
+                    close_mpl_figure(fig)
 
                     # Find path to baseline image
                     if baseline_remote:
@@ -246,9 +262,10 @@ class ImageComparison(object):
                         baseline_image_ref = os.path.abspath(os.path.join(os.path.dirname(item.fspath.strpath), baseline_dir, filename))
 
                     if not os.path.exists(baseline_image_ref):
-                        pytest.fail("Image file not found for comparison test. "
-                                    "(This is expected for new tests.)\nGenerated Image: "
-                                    "\n\t{test}".format(test=test_image), pytrace=False)
+                        pytest.fail("Image file not found for comparison test in: "
+                                    "\n\t{baseline_dir}"
+                                    "\n(This is expected for new tests.)\nGenerated Image: "
+                                    "\n\t{test}".format(baseline_dir=baseline_dir, test=test_image), pytrace=False)
 
                     # distutils may put the baseline images in non-accessible places,
                     # copy to our tmpdir to be sure to keep them in case of failure
@@ -268,7 +285,7 @@ class ImageComparison(object):
                         os.makedirs(self.generate_dir)
 
                     fig.savefig(os.path.abspath(os.path.join(self.generate_dir, filename)), **savefig_kwargs)
-                    plt.close(fig)
+                    close_mpl_figure(fig)
                     pytest.skip("Skipping test, since generating data")
 
         if item.cls is not None:
@@ -288,13 +305,12 @@ class FigureCloser(object):
 
     def pytest_runtest_setup(self, item):
 
-        compare = item.keywords.get('mpl_image_compare')
+        compare = get_marker(item, 'mpl_image_compare')
 
         if compare is None:
             return
 
         import matplotlib.pyplot as plt
-        from matplotlib.figure import Figure
 
         original = item.function
 
@@ -306,12 +322,7 @@ class FigureCloser(object):
             else:  # function
                 fig = original(*args, **kwargs)
 
-            # We only need to close actual Matplotlib figure objects. If
-            # we are dealing with a figure-like object that provides
-            # savefig but is not a real Matplotlib object, we shouldn't
-            # try closing it here.
-            if isinstance(fig, Figure):
-                plt.close(fig)
+            close_mpl_figure(fig)
 
         if item.cls is not None:
             setattr(item.cls, item.function.__name__, item_function_wrapper)
