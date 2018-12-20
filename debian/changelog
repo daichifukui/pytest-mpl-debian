@@ -1,4 +1,4 @@
-pytest-mpl (0.10-1) UNRELEASED; urgency=medium
+pytest-mpl (0.10-1) unstable; urgency=medium
 
   * New upstream release.
   * Rediff patches.
@@ -6,7 +6,7 @@ pytest-mpl (0.10-1) UNRELEASED; urgency=medium
   * Update minimum Python 3 version to 3.3.
   * Add dependency on Pillow.
 
- -- Leo Singer <leo.singer@ligo.org>  Thu, 20 Dec 2018 13:45:10 -0500
+ -- Leo Singer <leo.singer@ligo.org>  Thu, 20 Dec 2018 14:00:20 -0500
 
 pytest-mpl (0.9-4) unstable; urgency=medium
 
