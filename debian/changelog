@@ -1,3 +1,9 @@
+pytest-mpl (0.10-1) UNRELEASED; urgency=medium
+
+  * New upstream release.
+
+ -- Leo Singer <leo.singer@ligo.org>  Thu, 20 Dec 2018 13:45:10 -0500
+
 pytest-mpl (0.9-4) unstable; urgency=medium
 
   * Use correct pytest executable in Python 3 unit tests.
