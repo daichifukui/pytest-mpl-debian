@@ -5,12 +5,6 @@ Section: python
 Priority: optional
 Build-Depends: debhelper (>= 11),
                dh-python,
-               python-all (>= 2.6.6-3~),
-               python-matplotlib,
-               python-nose,
-               python-pil,
-               python-pytest,
-               python-setuptools (>= 0.6.4),
                python3-all,
                python3-matplotlib,
                python3-nose,
@@ -21,24 +15,7 @@ Standards-Version: 4.2.1
 Vcs-Browser: https://salsa.debian.org/debian-astro-team/pytest-mpl
 Vcs-Git: https://salsa.debian.org/debian-astro-team/pytest-mpl.git
 Homepage: https://github.com/astrofrog/pytest-mpl
-X-Python-Version: >= 2.6
 X-Python3-Version: >= 3.3
-
-Package: python-pytest-mpl
-Architecture: all
-Multi-Arch: foreign
-Depends: python-matplotlib,
-         python-nose,
-         python-pil,
-         python-pytest,
-         ${misc:Depends},
-         ${python:Depends}
-Description: pytest plugin for Matplotlib image comparison in Python
- Matplotlib includes a number of test utilities and decorators, but these are
- geared towards the nose testing framework. Pytest-mpl makes it easy to compare
- figures produced by tests to reference images when using pytest.
- .
- This package provides the pytest plugin for Python 2.
 
 Package: python3-pytest-mpl
 Architecture: all
