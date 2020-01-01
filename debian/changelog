@@ -1,6 +1,7 @@
 pytest-mpl (0.11-1) UNRELEASED; urgency=medium
 
   * New upstream release.
+  * Update Standards-Version to 4.4.1.
 
  -- Leo Singer <leo.singer@ligo.org>  Wed, 01 Jan 2020 14:59:10 -0500
 
