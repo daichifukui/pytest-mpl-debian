@@ -1,12 +1,11 @@
 Metadata-Version: 1.1
 Name: pytest-mpl
-Version: 0.10
+Version: 0.11
 Summary: pytest plugin to help with testing figures output from Matplotlib
 Home-page: https://github.com/matplotlib/pytest-mpl
 Author: Thomas Robitaille
 Author-email: thomas.robitaille@gmail.com
 License: BSD
-Description-Content-Type: UNKNOWN
 Description: |Travis Build Status| |AppVeyor Build status| |Coveralls coverage|
         
         About
@@ -169,7 +168,7 @@ Description: |Travis Build Status| |AppVeyor Build status| |Coveralls coverage|
         ^^^^^^^^^^
         
         By default, tests will be run using the Matplotlib 'classic' style
-        (ignoring any locally defined RC parameters). This can be overriden by
+        (ignoring any locally defined RC parameters). This can be overridden by
         using the ``style`` argument:
         
         .. code:: python
