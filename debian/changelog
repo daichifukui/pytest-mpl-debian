@@ -3,6 +3,7 @@ pytest-mpl (0.11-1) UNRELEASED; urgency=medium
   * New upstream release.
   * Update Standards-Version to 4.4.1.
   * Remove obsolete X-Python3-Version field from d/control.
+  * Update debhelper version and remove obsolete d/compat file.
 
  -- Leo Singer <leo.singer@ligo.org>  Wed, 01 Jan 2020 14:59:10 -0500
 
