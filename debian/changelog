@@ -1,3 +1,9 @@
+pytest-mpl (0.11-1) UNRELEASED; urgency=medium
+
+  * New upstream release.
+
+ -- Leo Singer <leo.singer@ligo.org>  Wed, 01 Jan 2020 14:59:10 -0500
+
 pytest-mpl (0.10-2) unstable; urgency=medium
 
   * Drop Python 2 package.
