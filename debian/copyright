@@ -35,7 +35,9 @@ License: BSD-2-Clause
  https://github.com/astrofrog/wcsaxes
 
 Files: debian/*
-Copyright: 2017, Leo Singer <leo.singer@ligo.org>
+Copyright:
+ 2017-2020, Leo Singer <leo.singer@ligo.org>
+ 2022, Fukui Daichi <a.dog.will.talk@akane.waseda.jp>
 License: GPL-2+
  This program is free software; you can redistribute it
  and/or modify it under the terms of the GNU General Public
