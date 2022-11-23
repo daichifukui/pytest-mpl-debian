@@ -1,3 +1,23 @@
+pytest-mpl (0.16.1-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream version 0.16.1 (Closes: #1005092)
+  * Update copyright
+  * Patch: adapt to upstream
+  * Update d/watch version
+  * Update d/copyright
+  * Update debhelper version to 13
+  * Add libjs-bootstrap and libjs-bootstrap4 as Depends
+  * Update standards version
+  * Add Rules-Requires-Root field
+  * d/patches: update fields and indexes
+  * Add Use-packaged-bootstrap.bundle.min.js.patch
+  * Add Add-mpl_image_compare-to-markers.patch
+  * Add Skip-failing-tests.patch
+  * Add Use-packaged-bootstrap.min.css.patch
+
+ -- Fukui Daichi <a.dog.will.talk@akane.waseda.jp>  Wed, 23 Nov 2022 12:22:20 +0000
+
 pytest-mpl (0.11-3) UNRELEASED; urgency=low
 
   * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository,
