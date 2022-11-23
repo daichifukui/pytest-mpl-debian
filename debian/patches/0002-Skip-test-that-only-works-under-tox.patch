@@ -1,16 +1,17 @@
 From: Leo Singer <leo.singer@ligo.org>
-Date: Thu, 25 Jan 2018 11:39:30 -0500
+Last-Update: 2018-01-25
 Subject: Skip test that only works under tox
+Forwarded: not-needed
 
 ---
  tests/test_pytest_mpl.py | 1 +
  1 file changed, 1 insertion(+)
 
 diff --git a/tests/test_pytest_mpl.py b/tests/test_pytest_mpl.py
-index 3aa4f02..d8b3e28 100644
+index 58fb95c..62ebc9b 100644
 --- a/tests/test_pytest_mpl.py
 +++ b/tests/test_pytest_mpl.py
-@@ -106,6 +106,7 @@ def test_output_dir():
+@@ -146,6 +146,7 @@ def test_output_dir():
  """
  
  

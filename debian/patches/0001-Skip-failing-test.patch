@@ -1,6 +1,7 @@
 From: Leo Singer <leo.singer@ligo.org>
-Date: Fri, 17 Feb 2017 16:38:43 -0500
+Last-Update: 2017-02-17
 Subject: Skip failing test
+Forwarded: not-needed
 
 ---
  tests/test_pytest_mpl.py | 1 +
