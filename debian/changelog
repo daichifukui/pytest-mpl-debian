@@ -1,7 +1,7 @@
 pytest-mpl (0.17.0-1) UNRELEASED; urgency=medium
 
   * Team upload.
-  * New upstream version
+  * New upstream version. Closes: #1063963, #1066745
   * Standards-Version: 4.6.2 (routine-update)
   * Build-Depends: s/dh-python/dh-sequence-python3/ (routine-update)
   * d/{control,copyright}: point to new upstream location
