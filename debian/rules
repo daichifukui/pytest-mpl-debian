@@ -9,4 +9,4 @@ export http_proxy := http://127.0.9.1:9
 export MPLBACKEND := agg
 
 %:
-	dh $@ --with python3 --buildsystem=pybuild
+	dh $@ --buildsystem=pybuild
