@@ -5,11 +5,14 @@ Section: python
 Priority: optional
 Build-Depends: debhelper-compat (= 13),
                dh-sequence-python3,
+               pybuild-plugin-pyproject,
                python3-all,
                python3-matplotlib,
                python3-pil,
                python3-pytest,
-               python3-setuptools
+               python3-setuptools,
+               python3-packaging,
+               python3-jinja2
 Standards-Version: 4.6.2
 Vcs-Browser: https://salsa.debian.org/debian-astro-team/pytest-mpl
 Vcs-Git: https://salsa.debian.org/debian-astro-team/pytest-mpl.git
