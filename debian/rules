@@ -8,5 +8,7 @@ export http_proxy := http://127.0.9.1:9
 # Use agg Matplotlib backend for testing on headless machines.
 export MPLBACKEND := agg
 
+export PYBUILD_TEST_ARGS=-m "mpl_image_compare"
+
 %:
 	dh $@ --buildsystem=pybuild
