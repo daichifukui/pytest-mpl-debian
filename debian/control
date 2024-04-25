@@ -11,6 +11,7 @@ Build-Depends: debhelper-compat (= 13),
                python3-pil,
                python3-pytest,
                python3-setuptools,
+               python3-setuptools-scm,
                python3-packaging,
                python3-jinja2
 Standards-Version: 4.6.2
