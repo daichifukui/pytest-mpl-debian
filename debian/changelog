@@ -1,3 +1,12 @@
+pytest-mpl (0.17.0-2) unstable; urgency=medium
+
+  * Team upload.
+  * Fix d/watch for new PyPi archive naming policy
+  * Drop "Rules-Requires-Root: no": it is now the default
+  * Bump Standards-Version to 4.7.2
+
+ -- Alexandre Detiste <tchet@debian.org>  Sat, 15 Nov 2025 20:45:48 +0100
+
 pytest-mpl (0.17.0-1) unstable; urgency=medium
 
   * Team upload.
