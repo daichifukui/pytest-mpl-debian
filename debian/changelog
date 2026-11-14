@@ -1,3 +1,15 @@
+pytest-mpl (0.17.0-3) UNRELEASED; urgency=medium
+
+  * Move from twitter-bootstrap{3,4} to bootstrap-html (v5)
+    (Closes: #1088499, #1088596)
+    - d/control: replace libjs-bootstrap and libjs-bootstrap4 with
+      libjs-bootstrap5 in Depends.
+    - d/patches: load bootstrap.min.css and bootstrap.bundle.min.js from
+      /usr/share/javascript/bootstrap5, and drop the CDN-only SRI
+      integrity/crossorigin attributes.
+
+ -- Fukui Daichi <a.dog.will.talk@akane.waseda.jp>  Sat, 14 Nov 2026 12:00:00 +0000
+
 pytest-mpl (0.17.0-2) unstable; urgency=medium
 
   * Team upload.
