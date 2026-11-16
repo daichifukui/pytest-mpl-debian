@@ -10,6 +10,9 @@ pytest-mpl (0.19.0-1) UNRELEASED; urgency=medium
   * d/watch: convert to version 5 format.
   * Add a lintian override for source-is-missing on navbar.html: the
     flagged line is inline SVG path data, which is its own source.
+  * Add a lintian override for privacy-breach-generic on list.js: Debian
+    does not package list.js, and the request is only made when a user
+    opens a generated HTML report.
 
  -- Fukui Daichi <a.dog.will.talk@akane.waseda.jp>  Mon, 16 Nov 2026 18:00:00 +0000
 
