@@ -1,0 +1,6 @@
+# Line 19 of navbar.html is the path data of an inline SVG icon (the "hash"
+# icon from Bootstrap Icons).  SVG path data is the preferred form for
+# modification, not generated or minified code, so no source is missing.
+# Lintian itself notes that files tagged very-long-line-length-in-source-file
+# are likely to be tagged source-is-missing as well.
+pytest-mpl source: source-is-missing [pytest_mpl/summary/templates/navbar.html]
