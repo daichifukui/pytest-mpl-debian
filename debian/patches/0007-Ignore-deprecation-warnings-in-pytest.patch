@@ -4,16 +4,16 @@ Subject: Ignore deprecation warnings in pytest
 
 Closes: #1058425
 ---
- setup.cfg | 1 +
+ pyproject.toml | 1 +
  1 file changed, 1 insertion(+)
 
---- pytest-mpl.orig/setup.cfg
-+++ pytest-mpl/setup.cfg
-@@ -50,6 +50,7 @@
- norecursedirs = tests/subtests/subtest
- filterwarnings = 
- 	error
-+	ignore::DeprecationWarning
- 	ignore:distutils Version classes are deprecated
- 	ignore:the imp module is deprecated in favour of importlib
- 	ignore:The NumPy module was reloaded
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -74,6 +74,7 @@
+ ]
+ filterwarnings = [
+     "error",
++    "ignore::DeprecationWarning",
+     "ignore:distutils Version classes are deprecated",
+     "ignore:the imp module is deprecated in favour of importlib",
+     "ignore:The NumPy module was reloaded",

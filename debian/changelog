@@ -1,3 +1,21 @@
+pytest-mpl (0.19.0-1) UNRELEASED; urgency=medium
+
+  * Team upload.
+  * New upstream version 0.19.0
+  * Refresh patches for the new upstream version:
+    - 0004-Add-mpl_image_compare-to-markers.patch,
+      0007-Ignore-deprecation-warnings-in-pytest.patch: upstream moved the
+      pytest configuration from setup.cfg to pyproject.toml, so add the
+      marker and the warning filter there.
+    - 0005-Skip-failing-tests.patch: drop the hunks for test_hash_fails and
+      test_hash_missing, which upstream removed.
+    - 0008-assert-not-return.patch: drop the hunks for tests upstream
+      removed.
+  * d/source/options: ignore changes to the generated *.egg-info directory,
+    so that the package builds twice in a row.
+
+ -- Fukui Daichi <a.dog.will.talk@akane.waseda.jp>  Mon, 16 Nov 2026 12:00:00 +0000
+
 pytest-mpl (0.17.0-2) unstable; urgency=medium
 
   * Team upload.
