@@ -1,3 +1,83 @@
+## v0.18.0 - 2025-11-15
+
+<!-- Release notes generated using configuration in .github/release.yml at main -->
+### What's Changed
+
+#### Exciting New Features 🎉
+
+* Support generating summary reports when using `pytest-xdist` by @ConorMacBride in https://github.com/matplotlib/pytest-mpl/pull/242
+
+#### Other Changes
+
+* [pre-commit.ci] pre-commit autoupdate by @pre-commit-ci[bot] in https://github.com/matplotlib/pytest-mpl/pull/226
+* [pre-commit.ci] pre-commit autoupdate by @pre-commit-ci[bot] in https://github.com/matplotlib/pytest-mpl/pull/228
+* [pre-commit.ci] pre-commit autoupdate by @pre-commit-ci[bot] in https://github.com/matplotlib/pytest-mpl/pull/229
+* [pre-commit.ci] pre-commit autoupdate by @pre-commit-ci[bot] in https://github.com/matplotlib/pytest-mpl/pull/233
+* CI: Harden GHA configuration by @tacaswell in https://github.com/matplotlib/pytest-mpl/pull/243
+* Bump stefanzweifel/git-auto-commit-action from 4.16.0 to 6.0.1 by @dependabot[bot] in https://github.com/matplotlib/pytest-mpl/pull/244
+* Bump OpenAstronomy/github-actions-workflows from 1 to 2 by @dependabot[bot] in https://github.com/matplotlib/pytest-mpl/pull/245
+* Bump actions/checkout from 2 to 4 by @dependabot[bot] in https://github.com/matplotlib/pytest-mpl/pull/246
+* Group all gha dependabot updates by @Cadair in https://github.com/matplotlib/pytest-mpl/pull/247
+* Bump actions/checkout from 4 to 5 in the actions group by @dependabot[bot] in https://github.com/matplotlib/pytest-mpl/pull/249
+* Set oldest macOS test to`mpl35` by @ConorMacBride in https://github.com/matplotlib/pytest-mpl/pull/250
+* Bump stefanzweifel/git-auto-commit-action from 6.0.1 to 7.0.0 in the actions group by @dependabot[bot] in https://github.com/matplotlib/pytest-mpl/pull/251
+* MNT/DEP: migrate static package metadata to pyproject.toml and add missing lower bounds on direct dependencies by @neutrinoceros in https://github.com/matplotlib/pytest-mpl/pull/252
+
+#### Infrastructure Changes
+
+* Generate baseline hashes during tests to reduce flakiness by @ConorMacBride in https://github.com/matplotlib/pytest-mpl/pull/234
+* Ensure requirements pinned in `tox.ini` are not overridden by @ConorMacBride in https://github.com/matplotlib/pytest-mpl/pull/253
+
+### New Contributors
+
+* @tacaswell made their first contribution in https://github.com/matplotlib/pytest-mpl/pull/243
+* @dependabot[bot] made their first contribution in https://github.com/matplotlib/pytest-mpl/pull/244
+
+**Full Changelog**: https://github.com/matplotlib/pytest-mpl/compare/v0.17.0...v0.18.0
+
+## v0.17.0 - 2024-02-14
+
+<!-- Release notes generated using configuration in .github/release.yml at main -->
+### What's Changed
+
+#### Fixes
+
+* Improve Logging Configuration: don't modify root logger by @theOehrly in https://github.com/matplotlib/pytest-mpl/pull/182
+* Improve error reporting when test raises an exception by @ConorMacBride in https://github.com/matplotlib/pytest-mpl/pull/193
+* MNT: Compat with pytest 8.1 by @pllim in https://github.com/matplotlib/pytest-mpl/pull/219
+
+#### Exciting New Features 🎉
+
+* Added support for EPS, PDF, and SVG image comparison by @astrofrog in https://github.com/matplotlib/pytest-mpl/pull/194
+* Started implementing support for deterministic figure output by @astrofrog in https://github.com/matplotlib/pytest-mpl/pull/196
+* Add missing CLI and INI options for a consistent API by @astrofrog in https://github.com/matplotlib/pytest-mpl/pull/181
+* Avoid using `py.path` by @eerovaher in https://github.com/matplotlib/pytest-mpl/pull/207
+* Allow using `-p no:legacypath` with `pytest` >= 7 by @eerovaher in https://github.com/matplotlib/pytest-mpl/pull/213
+
+#### Other Changes
+
+* Add initial Sphinx docs by @ConorMacBride in https://github.com/matplotlib/pytest-mpl/pull/174
+* Add documentation on avoiding `PytestReturnNotNoneWarning` by @ConorMacBride in https://github.com/matplotlib/pytest-mpl/pull/185
+* Add RTD config by @ConorMacBride in https://github.com/matplotlib/pytest-mpl/pull/195
+* Migrate docs from `README.rst` to website by @ConorMacBride in https://github.com/matplotlib/pytest-mpl/pull/199
+* Set deterministic to True for vector graphics and warn about change to True in future for PNG by @astrofrog in https://github.com/matplotlib/pytest-mpl/pull/197
+
+#### Infrastructure Changes
+
+* Verify class-based testing configurations produce the expected results by @ConorMacBride in https://github.com/matplotlib/pytest-mpl/pull/175
+* Update testing and CI for Matplotlib v3.6 by @ConorMacBride in https://github.com/matplotlib/pytest-mpl/pull/184
+* Upgrade for tox 4 by @ConorMacBride in https://github.com/matplotlib/pytest-mpl/pull/191
+* Upgrade CI package versions by @ConorMacBride in https://github.com/matplotlib/pytest-mpl/pull/215
+* Test wheel with 3.11 until `python-dateutil` is updated for 3.12 by @ConorMacBride in https://github.com/matplotlib/pytest-mpl/pull/217
+* Fix unclosed test files by @ConorMacBride in https://github.com/matplotlib/pytest-mpl/pull/222
+
+### New Contributors
+
+* @theOehrly made their first contribution in https://github.com/matplotlib/pytest-mpl/pull/182
+* @eerovaher made their first contribution in https://github.com/matplotlib/pytest-mpl/pull/207
+
+**Full Changelog**: https://github.com/matplotlib/pytest-mpl/compare/v0.16.1...v0.17.0
+
 ## v0.16.1 - 2022-07-23
 
 <!-- Release notes generated using configuration in .github/release.yml at main -->
@@ -18,10 +98,15 @@
 ### Fixes
 
 - Make summary log message about test results in general instead of failures by @neutrinoceros in https://github.com/matplotlib/pytest-mpl/pull/148
+  
 - Add support for classes with pytest 7 by @ConorMacBride in https://github.com/matplotlib/pytest-mpl/pull/164
+  
 - Note that this change necessitated a minor breaking change for figure tests within classes only, and the following will need to be done:
+  
 - - Hash library test names will need to be regenerated/updated to include the class name.
+  
 - - If the undocumented `mpl-use-full-test-name` ini option is enabled, the the baseline images will need to be regenerated, or have their filename updated to include the class name.
+  
 
 ### Other Changes
 

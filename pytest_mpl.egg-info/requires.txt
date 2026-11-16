@@ -1,17 +1,14 @@
-pytest
-matplotlib
-packaging
-Jinja2
-Pillow
-
-[:python_version < "3.8"]
-importlib_resources
+pytest>=6.2.5
+matplotlib>=3.5.3
+packaging>=22.0.0
+Jinja2>=2.10.2
+Pillow>=8.1.1
 
 [docs]
-sphinx
-mpl_sphinx_theme>=3.6.0.dev0
-sphinx_design
-matplotlib==3.6
+sphinx>=7.0.0
+mpl_sphinx_theme>=3.9.0
+sphinx_design>=0.6.0
+matplotlib==3.10.*
 
 [test]
-pytest-cov
+pytest-cov>=6.0.0
