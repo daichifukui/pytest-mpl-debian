@@ -1,3 +1,21 @@
+pytest-mpl (0.19.0-1) UNRELEASED; urgency=medium
+
+  * Team upload.
+  * Drop patches that are no longer needed:
+    - 0007-Ignore-deprecation-warnings-in-pytest.patch: added for
+      #1058425, where python3-dateutil called the deprecated
+      datetime.utcfromtimestamp() on import and upstream's
+      warnings-as-errors setting made the tests fail.  python3-dateutil
+      no longer calls it, and the tests run without any
+      DeprecationWarning.
+    - 0008-assert-not-return.patch: pytest-mpl intercepts the figures
+      returned by mpl_image_compare tests, so returning them raises no
+      PytestReturnNotNoneWarning while the plugin is loaded.  Replacing
+      "return fig" with "assert fig" made all of these tests fail when
+      run with --mpl.
+
+ -- Fukui Daichi <a.dog.will.talk@akane.waseda.jp>  Tue, 17 Nov 2026 12:00:00 +0000
+
 pytest-mpl (0.17.0-2) unstable; urgency=medium
 
   * Team upload.
