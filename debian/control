@@ -27,8 +27,6 @@ Depends: python3-matplotlib,
          python3-pytest,
          libjs-bootstrap,
          libjs-bootstrap4,
-         ${misc:Depends},
-         ${python3:Depends}
 Description: pytest plugin for Matplotlib image comparison in Python 3
  Matplotlib includes a number of test utilities and decorators, but these are
  geared towards the nose testing framework. Pytest-mpl makes it easy to compare
