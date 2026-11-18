@@ -3,8 +3,9 @@ Maintainer: Debian Astronomy Maintainers <debian-astro-maintainers@lists.alioth.
 Uploaders: Leo Singer <leo.singer@ligo.org>
 Section: python
 Priority: optional
-Build-Depends: debhelper-compat (= 13),
+Build-Depends: debhelper-compat (= 14),
                dh-sequence-python3,
+               dh-sequence-single-binary,
                pybuild-plugin-pyproject,
                python3-all,
                python3-matplotlib,
@@ -25,9 +26,7 @@ Multi-Arch: foreign
 Depends: python3-matplotlib,
          python3-pil,
          python3-pytest,
-         libjs-bootstrap5,
-         ${misc:Depends},
-         ${python3:Depends}
+         libjs-bootstrap5
 Description: pytest plugin for Matplotlib image comparison in Python 3
  Matplotlib includes a number of test utilities and decorators, but these are
  geared towards the nose testing framework. Pytest-mpl makes it easy to compare
