@@ -25,8 +25,7 @@ Multi-Arch: foreign
 Depends: python3-matplotlib,
          python3-pil,
          python3-pytest,
-         libjs-bootstrap,
-         libjs-bootstrap4,
+         libjs-bootstrap5,
          ${misc:Depends},
          ${python3:Depends}
 Description: pytest plugin for Matplotlib image comparison in Python 3
