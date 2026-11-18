@@ -1,2 +1,2 @@
-Test-Command: MPLBACKEND=agg pytest-3 -m "mpl_image_compare"
+Test-Command: MPLBACKEND=agg pytest-3 -m "mpl_image_compare" -W default::DeprecationWarning
 Depends: python3-pytest-mpl

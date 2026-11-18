@@ -9,7 +9,7 @@ export http_proxy := http://127.0.9.1:9
 # Use agg Matplotlib backend for testing on headless machines.
 export MPLBACKEND := agg
 
-export PYBUILD_TEST_ARGS=-m "mpl_image_compare"
+export PYBUILD_TEST_ARGS=-m "mpl_image_compare" -W default::DeprecationWarning
 #export SETUPTOOLS_SCM_PRETEND_VERSION=${DEB_VERSION_UPSTREAM}
 
 %:
