@@ -1,16 +1,16 @@
 From: Fukui Daichi <a.dog.will.talk@akane.waseda.jp>
-Last-Update: 2022-11-06
+Last-Update: 2026-11-16
 Subject: Skip failing tests
 Forwarded: not-needed
 
 ---
  tests/subtests/test_subtest.py |  4 ++++
- tests/test_pytest_mpl.py       | 22 ++++++++++------------
- 2 files changed, 14 insertions(+), 12 deletions(-)
+ tests/test_pytest_mpl.py       | 20 ++++++++------------
+ 2 files changed, 12 insertions(+), 12 deletions(-)
 
---- pytest-mpl.orig/tests/subtests/test_subtest.py
-+++ pytest-mpl/tests/subtests/test_subtest.py
-@@ -169,6 +169,7 @@
+--- a/tests/subtests/test_subtest.py
++++ b/tests/subtests/test_subtest.py
+@@ -197,6 +197,7 @@
          pytest.skip("Skipping testing, since `update_summary` is enabled.")
  
  
@@ -18,15 +18,15 @@ Forwarded: not-needed
  def test_default(tmp_path):
      run_subtest('test_default', tmp_path, [*IMAGE_COMPARISON_MODE])
  
-@@ -205,6 +206,7 @@
+@@ -255,6 +256,7 @@
      assert (tmp_path / 'results' / 'styles.css').exists()
  
  
 +@pytest.mark.skip(reason='works only under tox')
  def test_html_images_only(tmp_path):
      run_subtest('test_html_images_only', tmp_path, [*IMAGE_COMPARISON_MODE], summaries=['html'])
-     assert (tmp_path / 'results' / 'fig_comparison.html').exists()
-@@ -229,6 +231,7 @@
+     html_path = tmp_path / 'results' / 'fig_comparison.html'
+@@ -283,6 +285,7 @@
                  xfail=False, generating_hashes=True)
  
  
@@ -34,33 +34,17 @@ Forwarded: not-needed
  def test_generate_images_only(tmp_path):
      # generating images; no testing
      run_subtest('test_generate_images_only', tmp_path,
-@@ -254,6 +257,7 @@
-     assert (tmp_path / 'results' / 'fig_comparison.html').exists()
+@@ -330,6 +333,7 @@
+         assert len(list((tmp_path / 'results').glob('results-xdist-*-*.json'))) == num_workers
  
  
 +@pytest.mark.skip(reason='works only under tox')
  def test_html_generate_images_only(tmp_path):
      # generating images; no testing
      run_subtest('test_html_generate_images_only', tmp_path,
---- pytest-mpl.orig/tests/test_pytest_mpl.py
-+++ pytest-mpl/tests/test_pytest_mpl.py
-@@ -302,6 +302,7 @@
- """
- 
- 
-+@pytest.mark.skip(reason='works only under tox')
- def test_hash_fails(tmp_path):
-     test_file = tmp_path / "test.py"
-     test_file.write_text(TEST_FAILING_HASH, encoding="ascii")
-@@ -413,6 +414,7 @@
- """
- 
- 
-+@pytest.mark.skip(reason='works only under tox')
- def test_hash_missing(tmp_path):
-     test_file = tmp_path / "test.py"
-     test_file.write_text(TEST_MISSING_HASH)
-@@ -543,11 +545,7 @@
+--- a/tests/test_pytest_mpl.py
++++ b/tests/test_pytest_mpl.py
+@@ -304,11 +304,7 @@
  """
  
  
@@ -73,7 +57,7 @@ Forwarded: not-needed
  def test_class_fail(code, tmp_path):
  
      test_file = tmp_path / "test.py"
-@@ -563,7 +561,7 @@
+@@ -324,7 +320,7 @@
      assert code == 0
  
  
@@ -82,7 +66,7 @@ Forwarded: not-needed
  def test_user_fail(pytester, runpytest_args):
      pytester.makepyfile(
          """
-@@ -578,7 +576,7 @@
+@@ -339,7 +335,7 @@
      result.stdout.fnmatch_lines("FAILED*Manually failed by user.*")
  
  
@@ -91,7 +75,7 @@ Forwarded: not-needed
  def test_user_skip(pytester, runpytest_args):
      pytester.makepyfile(
          """
-@@ -592,7 +590,7 @@
+@@ -353,7 +349,7 @@
      result.assert_outcomes(skipped=1)
  
  
@@ -100,7 +84,7 @@ Forwarded: not-needed
  def test_user_importorskip(pytester, runpytest_args):
      pytester.makepyfile(
          """
-@@ -606,7 +604,7 @@
+@@ -367,7 +363,7 @@
      result.assert_outcomes(skipped=1)
  
  
@@ -109,7 +93,7 @@ Forwarded: not-needed
  def test_user_xfail(pytester, runpytest_args):
      pytester.makepyfile(
          """
-@@ -620,7 +618,7 @@
+@@ -381,7 +377,7 @@
      result.assert_outcomes(xfailed=1)
  
  
@@ -118,7 +102,7 @@ Forwarded: not-needed
  def test_user_exit_success(pytester, runpytest_args):
      pytester.makepyfile(
          """
-@@ -636,7 +634,7 @@
+@@ -397,7 +393,7 @@
      result.stdout.fnmatch_lines("*Exit*Manually exited by user.*")
  
  
@@ -127,7 +111,7 @@ Forwarded: not-needed
  def test_user_exit_failure(pytester, runpytest_args):
      pytester.makepyfile(
          """
-@@ -652,7 +650,7 @@
+@@ -413,7 +409,7 @@
      result.stdout.fnmatch_lines("*Exit*Manually exited by user.*")
  
  
