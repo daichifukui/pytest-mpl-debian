@@ -1,3 +1,25 @@
+pytest-mpl (0.19.0-1) UNRELEASED; urgency=medium
+
+  * Team upload.
+  * New upstream version 0.19.0.
+  * Move from twitter-bootstrap{3,4} to bootstrap-html (v5).
+    (Closes: #1088499, #1088596)
+  * Refresh patches for the new upstream version.
+  * Drop patches no longer needed:
+    - 0007-Ignore-deprecation-warnings-in-pytest.patch
+    - 0008-assert-not-return.patch
+  * Replace 0007 with -W default::DeprecationWarning in d/rules and
+    d/tests, so that deprecations are reported without failing the tests.
+  * d/source/options: ignore changes to the generated *.egg-info directory,
+    so that the package builds twice in a row.
+  * Bump debhelper compat level to 14.
+  * Bump Standards-Version to 4.7.4; drop the redundant Priority field.
+  * d/copyright: replace the old FSF postal address with a URL.
+  * d/watch: convert to version 5.
+  * Add lintian overrides for source-is-missing and privacy-breach-generic.
+
+ -- Fukui Daichi <a.dog.will.talk@akane.waseda.jp>  Mon, 16 Nov 2026 12:00:00 +0000
+
 pytest-mpl (0.17.0-2) unstable; urgency=medium
 
   * Team upload.
