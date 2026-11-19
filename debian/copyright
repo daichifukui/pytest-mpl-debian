@@ -30,7 +30,10 @@ Comment: Embeds the "hash" and "funnel" icons from Bootstrap Icons,
 Files: debian/*
 Copyright:
  2017-2020, Leo Singer <leo.singer@ligo.org>
- 2022, Fukui Daichi <a.dog.will.talk@akane.waseda.jp>
+ 2022, 2026, Fukui Daichi <a.dog.will.talk@akane.waseda.jp>
+ 2023, Ole Streicher <olebole@debian.org>
+ 2024, Michael R. Crusoe <crusoe@debian.org>
+ 2025, Alexandre Detiste <tchet@debian.org>
 License: GPL-2+
  This program is free software; you can redistribute it
  and/or modify it under the terms of the GNU General Public
