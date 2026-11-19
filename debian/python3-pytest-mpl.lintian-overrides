@@ -1,7 +1,0 @@
-# The HTML summary report template loads list.js from a CDN.  Debian does
-# not package list.js, so there is no local copy to point it at (the
-# Bootstrap files are already loaded from libjs-bootstrap5).  The request
-# only happens when a user opens a report generated with
-# --mpl-generate-summary=html in a browser, and the integrity attribute
-# pins the exact file.
-privacy-breach-generic * (https://cdn.jsdelivr.net/npm/list.js@1.5.0/dist/list.min.js) [usr/lib/python3/dist-packages/pytest_mpl/summary/templates/base.html]
