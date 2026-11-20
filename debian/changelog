@@ -1,3 +1,34 @@
+pytest-mpl (0.19.0-1) UNRELEASED; urgency=medium
+
+  * Team upload.
+  * New upstream version 0.19.0.
+  * Move from twitter-bootstrap{3,4} to bootstrap-html (v5).
+    (Closes: #1088499, #1088596)
+  * Refresh patches for the new upstream version.
+  * d/p/0007-*.patch: Dropped. The deprecated python3-dateutil call behind
+    #1058425 is gone. Instead, pass -W default::DeprecationWarning in d/rules
+    and d/tests, so that DeprecationWarnings are reported without failing the
+    tests.
+  * d/p/0008-*.patch: Dropped. pytest-mpl already keeps returned figures
+    from pytest, and the patch broke the tests under --mpl.
+  * d/source/options: Ignore changes to the generated *.egg-info directory,
+    so that the package builds twice in a row.
+  * Bump debhelper compat level to 14: enable the single-binary dh add-on
+    explicitly, and drop ${misc:Depends} and ${python3:Depends}, which
+    dh_gencontrol now adds automatically.
+  * Bump Standards-Version to 4.7.4. Drop the redundant Priority field.
+  * d/watch: Convert to version 5.
+  * d/source/lintian-overrides: Override source-is-missing for navbar.html.
+    Its long line is the SVG path data of a Bootstrap Icons icon, the form
+    Bootstrap Icons publishes. No source is missing.
+  * d/copyright: Replace the old FSF postal address with a URL.
+  * d/copyright: Document the Bootstrap Icons (Expat) in the report templates
+    and the WCSAxes code (BSD-3-Clause) in plugin.py.
+  * d/copyright: Use the standard Upstream-Contact field.
+  * d/copyright: Update the packaging copyright holders for debian/*.
+
+ -- Fukui Daichi <a.dog.will.talk@akane.waseda.jp>  Mon, 16 Nov 2026 12:00:00 +0000
+
 pytest-mpl (0.17.0-2) unstable; urgency=medium
 
   * Team upload.
