@@ -16,14 +16,14 @@ Comment: Includes code adapted from WCSAxes (BSD-3-Clause),
 Files: pytest_mpl/summary/templates/hash.svg
        pytest_mpl/summary/templates/image.svg
 Copyright: 2019-2023, The Bootstrap Authors
-License: MIT
+License: Expat
 Comment: The "hash" and "file-earmark-image" icons from Bootstrap Icons,
  https://icons.getbootstrap.com/
 
 Files: pytest_mpl/summary/templates/navbar.html
 Copyright: 2015, Thomas P. Robitaille
            2019-2023, The Bootstrap Authors
-License: BSD-2-Clause and MIT
+License: BSD-2-Clause and Expat
 Comment: Embeds the "hash" and "funnel" icons from Bootstrap Icons,
  https://icons.getbootstrap.com/
 
@@ -107,7 +107,7 @@ License: BSD-3-Clause
  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-License: MIT
+License: Expat
  Permission is hereby granted, free of charge, to any person obtaining a copy
  of this software and associated documentation files (the "Software"), to deal
  in the Software without restriction, including without limitation the rights
